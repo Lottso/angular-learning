@@ -4,14 +4,31 @@ type="text"
 class="form-control"
 (input)="onUpdateServerName($event)">-->
 
-<input 
-type="text"
-class="form-control"
-[(ngModel)]="serverName">
-
-<span>{{ serverName }}</span>
-<button type="button" class="btn btn-primary" [disabled]="!allowNewServer"(click)="onCreateServer()">Add Server</button>
-<!--<span [innerText]="allowNewServer"></span>-->
-<span>{{ serverCreationStatus }}</span>
-<app-server></app-server>
-<app-server></app-server>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <input type="text" class="form-control" [(ngModel)]="serverName">
+      <!-- <span>{{ serverName }}</span> -->
+    </div>
+    <div class="col-md-6">
+        <button type="button" class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add
+            Server</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <!--<span [innerText]="allowNewServer"></span>-->
+      <span>{{ serverCreationStatus }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+        <app-server></app-server>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+          <app-server></app-server>
+      </div>
+    </div>
+</div>
