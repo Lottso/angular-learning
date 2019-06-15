@@ -11,24 +11,24 @@ class="form-control"
       <!-- <span>{{ serverName }}</span> -->
     </div>
     <div class="col-md-6">
-        <button type="button" class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add
-            Server</button>
+      <button type="button" class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add
+        Server</button>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <!--<span [innerText]="allowNewServer"></span>-->
-      <span>{{ serverCreationStatus }}</span>
+      <!-- <span>{{ serverCreationStatus }}</span> -->
+      <span *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</span>
+      <!-- <span *ngIf="!serverCreated">No server was created!</span> -->
+      <ng-template #noServer>
+        <span>No server was created</span>
+      </ng-template>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
-        <app-server></app-server>
+      <app-server *ngFor="let server of servers"></app-server>
     </div>
   </div>
-  <div class="row">
-      <div class="col-md-12">
-          <app-server></app-server>
-      </div>
-    </div>
 </div>

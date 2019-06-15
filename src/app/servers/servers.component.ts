@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { transitiveScopesFor } from '@angular/core/src/render3/jit/module';
 
 @Component({
   selector: 'app-servers',
@@ -11,7 +10,9 @@ import { transitiveScopesFor } from '@angular/core/src/render3/jit/module';
 export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
-  serverName = 'TestServer';
+  serverName = '';
+  serverCreated = false;
+  servers = ['Test-server', 'Test-server-mirror-1'];
 
   constructor() {
     setTimeout(() => {
@@ -23,6 +24,8 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
   onUpdateServerName(event: any) {
