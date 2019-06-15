@@ -1,3 +1,13 @@
-<p>
-  directives works!
-</p>
+<div class="container" style="margin-top: 5%">
+  <div class="row">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-primary" (click)="shown = 'SecPas'; CountFun()">Display Details</button>
+      <span *ngIf="shown === 'SecPas'">Secret Password = tuna</span>
+      <div class="col-md-12">
+        <ul>
+          <li *ngFor="let countNumber of count" [ngStyle]="{color: countNumber > 4 ? 'blue' : 'black'}">{{ countNumber }}</li>
+        </ul> 
+      </div>
+    </div>
+  </div>
+</div>

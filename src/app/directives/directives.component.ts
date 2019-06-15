@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./directives.component.css']
 })
 export class DirectivesComponent implements OnInit {
+  count = [];
+  push: any;
+  CountFun() {
+    
+    this.count.push(this.count.length + 1);
+  }
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
