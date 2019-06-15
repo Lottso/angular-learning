@@ -9,6 +9,7 @@ import { JourneyComponent } from './journey/journey.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { UserComponent } from './user/user.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserComponent } from './user/user.component';
     JourneyComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
-    UserComponent
+    UserComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,
